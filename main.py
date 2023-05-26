@@ -9,7 +9,7 @@ master.title('Py_Bank')
 # Tamanho da nossa tela:
 master.geometry('323x700+610+153')
 # Travar o redicionamento da tela:
-master.wm_resizable(width=1,height=1)
+master.wm_resizable(width=0,height=0)
 
 # Importações de imagens:
 # Imagem pricipal:
@@ -35,8 +35,10 @@ master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
 # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
 # Config de cada botão:
 # Config caixa de entrada nome.
-Entrada_Nome = Entry(master, bd=2, font=('calibre', 13), justify=CENTER)
-Entrada_Nome.place(width=201, height=24, x=59, y=357)
+
+Entrada_Nome = Entry(master, bd=2 , font=('calibre', 13), justify=CENTER)
+Entrada_Nome.place(width=201, height=24, x=59, y=357,)
+
 
 # # config Caixa de Email
 Entrada_email = Entry(master, bd=2, font=('calibre', 13), justify=CENTER)
@@ -45,5 +47,7 @@ Entrada_email.place(width=197, height=26, x=62, y=412)
 Entrada_Senha = Entry(master, bd=2, font=('calibre', 15), justify=CENTER,show='*')
 Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
+botao_entrar = Button(master,text='ENTRAR',font=('calibre',17),background='#C0C0C0',justify=CENTER)
+botao_entrar.place(width=213, height=34, x=54, y=530)
 
 master.mainloop()
