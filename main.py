@@ -19,7 +19,6 @@ def Nova_janela():
 
     master1.destroy
 
-
 # Importações de imagens:
 # Imagem pricipal:
 Imagem_Pricipal = PhotoImage(file='imagens/Tela_inicial.png') # Importando a imagem em uma variavel
@@ -44,18 +43,18 @@ master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
 # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
 # Config de cada botão:
 # Config caixa de entrada nome.
-
 Entrada_Nome = Entry(master, bd=2 , font=('calibre', 13), justify=CENTER)
 Entrada_Nome.place(width=201, height=24, x=59, y=357,)
-
 
 # # config Caixa de Email
 Entrada_email = Entry(master, bd=2, font=('calibre', 13), justify=CENTER)
 Entrada_email.place(width=197, height=26, x=62, y=412)
+
 # Config Caixa de entrada senha.
 Entrada_Senha = Entry(master, bd=2, font=('calibre', 15), justify=CENTER,show='*')
 Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
+#config Botao
 botao_entrar = Button(master,text='ENTRAR',font=('calibre',17),background='#C0C0C0',justify=CENTER,command=Nova_janela)
 botao_entrar.place(width=213, height=34, x=54, y=530)
 
