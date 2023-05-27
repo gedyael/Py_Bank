@@ -1,7 +1,11 @@
+#importaçoes
 from tkinter import *
 import posiciona
-master = Tk()
+import time 
 
+
+#iniciando o TK
+master = Tk()
 
 # Config pricipais da janela:       
 # Título do banco:
@@ -13,11 +17,13 @@ master.wm_resizable(width=0,height=0)
 
 #funçoes nova janela
 def Nova_janela():
+    master.destroy()
+    time.sleep(0.3)
     master1 = Tk()
     master1.title('Nova Janela')
     master1.geometry(('323x700+500+153'))
 
-    master1.destroy
+    
 
 # Importações de imagens:
 # Imagem pricipal:
