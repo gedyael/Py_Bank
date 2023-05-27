@@ -3,13 +3,22 @@ import posiciona
 master = Tk()
 
 
-# Config pricipais da janela:
+# Config pricipais da janela:       
 # Título do banco:
 master.title('Py_Bank')
 # Tamanho da nossa tela:
 master.geometry('323x700+610+153')
 # Travar o redicionamento da tela:
 master.wm_resizable(width=0,height=0)
+
+#funçoes nova janela
+def Nova_janela():
+    master1 = Tk()
+    master1.title('Nova Janela')
+    master1.geometry(('323x700+500+153'))
+
+    master1.destroy
+
 
 # Importações de imagens:
 # Imagem pricipal:
@@ -47,7 +56,7 @@ Entrada_email.place(width=197, height=26, x=62, y=412)
 Entrada_Senha = Entry(master, bd=2, font=('calibre', 15), justify=CENTER,show='*')
 Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
-botao_entrar = Button(master,text='ENTRAR',font=('calibre',17),background='#C0C0C0',justify=CENTER)
+botao_entrar = Button(master,text='ENTRAR',font=('calibre',17),background='#C0C0C0',justify=CENTER,command=Nova_janela)
 botao_entrar.place(width=213, height=34, x=54, y=530)
 
 master.mainloop()
