@@ -1,5 +1,6 @@
 #importaçoes
 from tkinter import *
+
 import posiciona
 import time 
 
@@ -15,16 +16,24 @@ master.geometry('323x700+610+153')
 # Travar o redicionamento da tela:
 master.wm_resizable(width=0,height=0)
 
+
+
 #funçoes nova janela
 def Nova_janela():
     master.destroy()
     time.sleep(0.3)
     master1 = Tk()
-    master1.title('Nova Janela')
-    master1.geometry(('323x700+500+153'))
-    
+    master1.title('Pybank')
+    master1.geometry(('323x700+610+153'))
+
     #bordas de janela
     master1.wm_resizable(width=0,height=0)
+    #impotaçao nova janela
+    #imagem Secudaria
+    imagem_secundaria = PhotoImage(file='Tela_2.png')
+    #criaçao da Label
+    tela_secundaria = Label(master1,image=imagem_secundaria)
+    tela_secundaria.pack()
 
     
 
