@@ -22,6 +22,9 @@ def Nova_janela():
     master1 = Tk()
     master1.title('Nova Janela')
     master1.geometry(('323x700+500+153'))
+    
+    #bordas de janela
+    master1.wm_resizable(width=0,height=0)
 
     
 
@@ -29,11 +32,15 @@ def Nova_janela():
 # Imagem pricipal:
 Imagem_Pricipal = PhotoImage(file='imagens/Tela_inicial.png') # Importando a imagem em uma variavel
 #  Imagem do botão ENTRAR:
-# Imagem_Botao_Entrar = PhotoImage(file='imagens/Botao_Entrar.png')
+imagem_botao = PhotoImage(file='imagens/Botao.png')
 
 # Criação da Label
 TelaPricipal = Label(master,image=Imagem_Pricipal) # Criando label para imagem pricipal
 TelaPricipal.pack()
+
+botao_entrar = Label(master,image=imagem_botao)
+botao_entrar.pack()
+
 
 # Criação das entradas:
 Entrada_Nome = Entry(master)
@@ -49,19 +56,19 @@ master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
 # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
 # Config de cada botão:
 # Config caixa de entrada nome.
-Entrada_Nome = Entry(master, bd=2 , font=('calibre', 13), justify=CENTER)
+Entrada_Nome= Entry(master, borderwidth=0, font=('calibre', 13), justify=CENTER)
 Entrada_Nome.place(width=201, height=24, x=59, y=357,)
 
 # # config Caixa de Email
-Entrada_email = Entry(master, bd=2, font=('calibre', 13), justify=CENTER)
+Entrada_email = Entry(master, borderwidth=0, font=('calibre', 13), justify=CENTER)
 Entrada_email.place(width=197, height=26, x=62, y=412)
 
 # Config Caixa de entrada senha.
-Entrada_Senha = Entry(master, bd=2, font=('calibre', 15), justify=CENTER,show='*')
+Entrada_Senha = Entry(master, borderwidth=0, font=('calibre', 15), justify=CENTER,show='*')
 Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
 #config Botao
-botao_entrar = Button(master,text='ENTRAR',font=('calibre',17),background='#C0C0C0',justify=CENTER,command=Nova_janela)
-botao_entrar.place(width=213, height=34, x=54, y=530)
+botao_entrar = Button(master,image=imagem_botao,borderwidth=0,command=Nova_janela)
+botao_entrar.place(width=198, height=22, x=54, y=532)
 
 master.mainloop()
