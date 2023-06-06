@@ -1,9 +1,7 @@
 #importaçoes
 from tkinter import *
-
 import posiciona
 import time 
-
 
 #iniciando o TK
 master = Tk()
@@ -24,18 +22,16 @@ def Nova_janela():
     time.sleep(0.3)
     master1 = Tk()
     master1.title('Pybank')
-    master1.geometry(('323x700+610+153'))
+    master1.geometry('323x700+610+153')
 
     #bordas de janela
     master1.wm_resizable(width=0,height=0)
     #impotaçao nova janela
     #imagem Secudaria
-    imagem_secundaria = PhotoImage(file='Tela_2.png')
+    imagem_secundaria = PhotoImage(file="imagens/Tela_sec.png")
     #criaçao da Label
     tela_secundaria = Label(master1,image=imagem_secundaria)
     tela_secundaria.pack()
-
-    
 
 # Importações de imagens:
 # Imagem pricipal:
@@ -65,15 +61,15 @@ master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
 # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
 # Config de cada botão:
 # Config caixa de entrada nome.
-Entrada_Nome= Entry(master, borderwidth=0, font=('calibre', 13), justify=CENTER)
+Entrada_Nome= Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER)
 Entrada_Nome.place(width=201, height=24, x=59, y=357,)
 
 # # config Caixa de Email
-Entrada_email = Entry(master, borderwidth=0, font=('calibre', 13), justify=CENTER)
+Entrada_email = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER)
 Entrada_email.place(width=197, height=26, x=62, y=412)
 
 # Config Caixa de entrada senha.
-Entrada_Senha = Entry(master, borderwidth=0, font=('calibre', 15), justify=CENTER,show='*')
+Entrada_Senha = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER,show='*')
 Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
 #config Botao
