@@ -7,7 +7,7 @@ import TelaSaldo
 
 def Janela_2():
     time.sleep(0.3)
-    master2 = tk.Toplevel()
+    master2 = tk.Tk()
     master2.title('Area Pix')
     master2.geometry('323x700+610+153')
     master2.wm_resizable(width=0,height=0)

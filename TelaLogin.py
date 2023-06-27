@@ -6,6 +6,7 @@ import TelaSaldo
 #iniciando o TK
 
 def JanelaInicial():
+
     master = tk.Tk()
         
     # Config pricipais da janela:       
@@ -41,6 +42,12 @@ def JanelaInicial():
     master.bind('<ButtonRelease-1>', lambda arg: posiciona.fim_place(arg, master))
     master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
 
+    
+    def destruir():
+        master.destroy()
+        TelaSaldo.JanelaSaldo()
+        
+        
 
     ''''''
     # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
@@ -58,7 +65,7 @@ def JanelaInicial():
     Entrada_Senha.place(width=201, height=23, x=60, y=480)
 
     #config Botao
-    botao_entrar = Button(master,image=imagem_botao,borderwidth=0,command=TelaSaldo.JanelaSaldo)
+    botao_entrar = Button(master,image=imagem_botao,borderwidth=0,command=destruir)
     botao_entrar.place(width=198, height=22, x=54, y=532)
 
     master.mainloop()
