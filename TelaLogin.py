@@ -33,21 +33,23 @@ def JanelaInicial():
     botao_entrar.pack()
 
 
-    # Criação das entradas:
-    Entrada_Nome = Entry(master)
-    Entrada_Senha = Entry(master,show="*")
 
-    #Colar as linhas no código principal. OBS: a instância da classe Tk() deve ser de mesmo nome!
+
+       #Colar as linhas no código principal. OBS: a instância da classe Tk() deve ser de mesmo nome!
     master.bind('<Button-1>', posiciona.inicio_place)
     master.bind('<ButtonRelease-1>', lambda arg: posiciona.fim_place(arg, master))
-    master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))
-
+    master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))  #
     
     def destruir():
         master.destroy()
         TelaSaldo.JanelaSaldo()
-        
-        
+
+    
+
+    def test():
+        print(esconder.get())  
+
+    
 
     ''''''
     # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
@@ -61,8 +63,11 @@ def JanelaInicial():
     Entrada_email.place(width=197, height=26, x=62, y=412)
 
     # Config Caixa de entrada senha.
-    Entrada_Senha = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER,show='*')
+    Entrada_Senha = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER,show="*")
     Entrada_Senha.place(width=201, height=23, x=60, y=480)
+    
+    esconder = Checkbutton(master,onvalue=1,border='black',offvalue=0,command=test,variable=test,)
+    esconder.place(width=12, height=10, x=33, y=511)
 
     #config Botao
     botao_entrar = Button(master,image=imagem_botao,borderwidth=0,command=destruir)
