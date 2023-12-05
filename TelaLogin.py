@@ -66,7 +66,7 @@ def JanelaInicial():
     Entrada_Senha = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER,show="*")
     Entrada_Senha.place(width=201, height=23, x=60, y=480)
     
-    esconder = Checkbutton(master,onvalue=1,border='black',offvalue=0,command=test,variable=test,)
+    esconder = Checkbutton(master,onvalue=1,offvalue=0,command=test,variable=test,)
     esconder.place(width=12, height=10, x=33, y=511)
 
     #config Botao
