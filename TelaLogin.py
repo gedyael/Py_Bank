@@ -47,8 +47,16 @@ def JanelaInicial():
     
 
     def test():
-        print(esconder.get())  
+   # Função chamada quando o botão é pressionado
+     valor_esconder = esconder.get()
 
+     if valor_esconder == 1:
+        # Se a caixa de seleção estiver marcada, desmarque-a
+        checkbox.deselect()
+     else:
+        # Se a caixa de seleção estiver desmarcada, marque-a
+        checkbox.select()
+      
     
 
     ''''''
