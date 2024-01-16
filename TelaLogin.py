@@ -3,6 +3,7 @@ from tkinter import *
 import posiciona
 import TelaSaldo
 
+
 #iniciando o TK
 
 def JanelaInicial():
@@ -32,40 +33,28 @@ def JanelaInicial():
     botao_entrar = Label(master,image=imagem_botao)
     botao_entrar.pack()
 
-
-
-
-       #Colar as linhas no código principal. OBS: a instância da classe Tk() deve ser de mesmo nome!
-    master.bind('<Button-1>', posiciona.inicio_place)
-    master.bind('<ButtonRelease-1>', lambda arg: posiciona.fim_place(arg, master))
-    master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))  #
+    #Colar as linhas no código principal. OBS: a instância da classe Tk() deve ser de mesmo nome!
+    #master.bind('<Button-1>', posiciona.inicio_place)
+    #master.bind('<ButtonRelease-1>', lambda arg: posiciona.fim_place(arg, master))
+    #master.bind('<Button-2>', lambda arg: posiciona.para_geometry(master))  #
     
     def destruir():
         master.destroy()
         TelaSaldo.JanelaSaldo()
 
-    
-
     def test():
-   # Função chamada quando o botão é pressionado
-     valor_esconder = esconder.get()
-
-     if valor_esconder == 1:
-        # Se a caixa de seleção estiver marcada, desmarque-a
-        checkbox.deselect()
-     else:
-        # Se a caixa de seleção estiver desmarcada, marque-a
-        checkbox.select()
-      
-    
-
+         if esconder_var.get() == 1:
+            Entrada_Senha.config(show="")
+         else:
+            Entrada_Senha.config(show="*")
+   
     ''''''
     # Botao_Ent = Button(master,image=Imagem_Botao_Entrar,borderwidth=0)
     # Config de cada botão:
     # Config caixa de entrada nome.
     Entrada_Nome= Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER)
     Entrada_Nome.place(width=201, height=24, x=59, y=357,)
-
+     
     # # config Caixa de Email
     Entrada_email = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER)
     Entrada_email.place(width=197, height=26, x=62, y=412)
@@ -74,9 +63,11 @@ def JanelaInicial():
     Entrada_Senha = Entry(master, borderwidth=0, font=('Verdana', 10), justify=CENTER,show="*")
     Entrada_Senha.place(width=201, height=23, x=60, y=480)
     
-    esconder = Checkbutton(master,onvalue=1,offvalue=0,command=test,variable=test,)
+    esconder_var = IntVar()
+    esconder = Checkbutton(master,onvalue=1,variable=esconder_var,offvalue=0,command=test)
     esconder.place(width=12, height=10, x=33, y=511)
 
+   
     #config Botao
     botao_entrar = Button(master,image=imagem_botao,borderwidth=0,command=destruir)
     botao_entrar.place(width=198, height=22, x=54, y=532)
